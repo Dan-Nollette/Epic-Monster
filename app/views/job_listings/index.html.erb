@@ -1,0 +1,12 @@
+<h1 class='jumbotron' >Puget Sound Tech Board</h1>
+
+<div class="container">
+  <% if @listings.length > 0 %>
+    <%@listings.each do |listing|%>
+      <p><%= link_to listing.title, listing_path(listing) %><p>
+    <%end%>
+  <% else%>
+    <p>Sorry, there are no job listings currently available to view.</p>
+  <% end %>
+
+</div>

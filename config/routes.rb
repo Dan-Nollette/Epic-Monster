@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
 
-  resources :profile do
-    resources :listing
+  resources :profiles do
+    resources :job_listings
   end
 
   root :to => "job_listings#index"

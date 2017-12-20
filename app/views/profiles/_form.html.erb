@@ -1,0 +1,13 @@
+<%= render "layouts/errors", :object => @profile %>
+
+<%= form_for @profile do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %> <br>
+  <%= f.label :description %>
+  <%= f.text_field :description %> <br>
+  <%= f.radio_button :kind, 'worker', :checked => true %>
+  <%= label :kind_worker, 'Worker' %>
+  <%= f.radio_button :kind, 'employer' %>
+  <%= label :kind_employer, 'Employer' %>
+  <%= f.submit %>
+<% end %>
