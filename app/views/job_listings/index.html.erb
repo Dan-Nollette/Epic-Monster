@@ -3,10 +3,14 @@
 <div class="container">
   <% if @listings.length > 0 %>
     <%@listings.each do |listing|%>
-      <p><%= link_to listing.title, listing_path(listing) %><p>
+      <p><%= link_to listing.title, profile_job_listing_path(profile_id: listing.profile_id, id: listing.id) %><p>
     <%end%>
   <% else%>
     <p>Sorry, there are no job listings currently available to view.</p>
   <% end %>
-
+  <%if @profile%>
+    <%= link_to "Create a new Job Posting", "/profiles/#{@profile.id}/job_listings/new" %>
+  <%end%>
+  <br>
+  <%= link_to "Browse Profiles", "/profiles" %>
 </div>
