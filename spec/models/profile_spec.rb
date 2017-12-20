@@ -9,4 +9,6 @@ describe Profile do
   it { should have_many(:job_skills).through(:job_listings)}
   it { should have_many(:skills).through(:profile_skills)}
   it {should belong_to :user}
+  it { should validate_presence_of :name }
+  it { should validate_presence_of :description }
 end

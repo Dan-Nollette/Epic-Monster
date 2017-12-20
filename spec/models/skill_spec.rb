@@ -5,4 +5,5 @@ describe Skill do
   it { should have_many :profile_skills }
   it { should have_many(:profiles).through(:profile_skills) }
   it { should have_many(:job_listings).through(:job_skills) }
+  it { should validate_presence_of :name }
 end
