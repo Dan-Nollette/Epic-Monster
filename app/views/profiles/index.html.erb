@@ -1,1 +1,11 @@
-index
+<div class="container">
+  <% if @profiles.length > 0 %>
+    <%@profiles.each do |profile|%>
+      <p><%= link_to profile.name, profile_path(profile) %><p>
+    <%end%>
+  <% else%>
+    <p>Sorry, there are no profiles currently available to view.</p>
+  <% end %>
+  <br>
+  <%= link_to "Browse Listings", "/profiles/1/job_listings"%>
+</div>

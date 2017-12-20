@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+    @skills = @profile.skills
   end
 
   def new

@@ -1,1 +1,14 @@
-show
+<h1>Profile</h1>
+
+<ul>
+  <li>Name: <%= @profile.name%></li>
+  <li>Description: <%= @profile.description%></li>
+  <%if @skills%>
+    <ul>
+      <%@skills.each do |skill|%>
+        <li>skill.name</li>
+      <%end%>
+    </ul>
+  <%end%>
+
+</ul>
