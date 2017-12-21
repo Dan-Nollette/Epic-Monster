@@ -22,12 +22,14 @@ class ProfilesController < ApplicationController
   def update
     @profile = Profile.find(params[:id])
     if (@profile.update(profile_params))
+      flash[:notice] = "Profile successfully updated!"
+      skills =[]
       params[:skill].each do |key, value|
-        if value
-          @profile.skills.create(key)
+        if (value == '1')
+          skills << Skill.find_by(name: key)
         end
       end
-      flash[:notice] = "Profile successfully updated!"
+      @profile.skills = skills
       redirect_to profile_path(@profile)
     else
       render :edit
@@ -38,9 +40,6 @@ class ProfilesController < ApplicationController
     @skills = Skill.all
     @profile = Profile.new(profile_params.merge( :user_id => current_user.id))
     if (@profile.save)
-      params[:skill].each do |skill|
-        puts (skill.key) + "   " + skill.value
-      end
       flash[:notice] = "Profile successfully added!"
       redirect_to profile_path(@profile)
     else

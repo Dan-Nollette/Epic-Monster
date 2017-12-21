@@ -12,7 +12,11 @@
 
   <% @skills.each do |skill|%>
     <%=skill.name%>
-    <%= check_box("skill", skill.name)%><br>
+    <%if @profile.skills.find_by(name: skill.name)%>
+      <%= check_box("skill", skill.name, {checked: true})%><br>
+    <%else%>
+      <%= check_box("skill", skill.name, {checked: false})%><br>
+    <%end%>
   <%end%>
   <br>
   <%= f.submit %>
