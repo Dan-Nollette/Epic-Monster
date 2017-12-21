@@ -1,5 +1,4 @@
 <%= render "layouts/errors", :object => @profile %>
-
 <%= form_for @profile do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %> <br>
@@ -9,5 +8,14 @@
   <%= label :kind_worker, 'Worker' %>
   <%= f.radio_button :kind, 'employer' %>
   <%= label :kind_employer, 'Employer' %>
+  <h3>Skills:</h3>
+
+  <% @skills.each do |skill|%>
+    <%=skill.name%>
+    <%= check_box("skill", skill.name)%><br>
+  <%end%>
+  <br>
   <%= f.submit %>
 <% end %>
+
+<%= link_to "Create New Skills", "/skills/new"%>

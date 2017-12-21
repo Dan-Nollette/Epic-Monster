@@ -1,8 +1,10 @@
 <h1>Job Listing</h1>
-
 <ul>
   <li>Title: <%= @job_listing.title%></li>
   <li>Description: <%= @job_listing.description%></li>
   <li>Organization: <%= @job_listing.profile.name%></li>
   <li>Keywords: <%= @job_listing.keywords%></li>
 </ul>
+<%= link_to "Delete Job Listing",  profile_job_listing_path(@job_listing),
+                          :data => {:confirm => "Are You Sure?",
+                                    :method => "delete"}%>

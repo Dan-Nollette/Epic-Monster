@@ -32,6 +32,12 @@ class JobListingsController < ApplicationController
     @method = :put
   end
 
+  def destroy
+    @job_listing = JobListing.find(params[:id])
+    @job_listing.destroy
+    redirect_to profile_job_listings_path
+  end
+
 private
   def job_listing_params
     params.require(:job_listing).permit(:title, :description, :keywords)

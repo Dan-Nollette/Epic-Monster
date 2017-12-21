@@ -1,16 +1,16 @@
-<h1 class='jumbotron' >Puget Sound Tech Board</h1>
-
 <div class="container">
+  <h2>Job Listings</h2>
   <% if @listings.length > 0 %>
+  <ul>
     <%@listings.each do |listing|%>
-      <p><%= link_to listing.title, profile_job_listing_path(profile_id: listing.profile_id, id: listing.id) %><p>
+      <li><%= link_to listing.title, profile_job_listing_path(profile_id: listing.profile_id, id: listing.id) %></li>
     <%end%>
+  </ul>
   <% else%>
     <p>Sorry, there are no job listings currently available to view.</p>
   <% end %>
-  <%if @profile%>
+  <%if @profile && @profile.kind == "employer"%>
     <%= link_to "Create a new Job Posting", "/profiles/#{@profile.id}/job_listings/new" %>
   <%end%>
   <br>
-  <%= link_to "Browse Profiles", "/profiles" %>
 </div>

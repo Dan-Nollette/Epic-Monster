@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Epic-Monster</title>
+    <title>Puget Sound Tech Board</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -14,7 +14,10 @@
     <% else %>
       <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
     <% end %>
-
+    | <%= link_to "Browse Profiles", "/profiles" %>
+    | <%= link_to "Browse Listings", "/profiles/1/job_listings"%>
+    | <%= link_to "Browse Skills", "/skills"%>
+    <h1 class='jumbotron'>Puget Sound Tech Board</h1>
     <%= flash[:alert] %>
     <%= flash[:notice] %>
 

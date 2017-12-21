@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Skills</h2>
+  <% if @skills.length > 0 %>
+    <ul>
+      <%@skills.each do |skill|%>
+        <li><%= link_to skill.name, skill_path(skill) %></li>
+      <%end%>
+    </ul>
+  <% else%>
+    <p>Sorry, there are no skills currently available to view.</p>
+  <% end %>
+
+  <%= link_to "Create a new skill", "/skills/new" %>
+</div>

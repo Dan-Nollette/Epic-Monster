@@ -1,5 +1,4 @@
 <h1>Profile</h1>
-
 <ul>
   <li>Name: <%= @profile.name%></li>
   <li>Description: <%= @profile.description%></li>
@@ -10,5 +9,5 @@
       <%end%>
     </ul>
   <%end%>
-
 </ul>
+<%= link_to "Update Profile", "/profiles/#{@profile.id}/edit"%>
