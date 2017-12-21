@@ -7,9 +7,12 @@ class ProfilesController < ApplicationController
   def show
     @profile = Profile.find(params[:id])
     @skills = @profile.skills
+    @blog_entry = @profile.blog_entries.new
+    @blog_entries = @profile.blog_entries
   end
 
   def new
+    @blog_entry = @profile.blog_entries.new
     @skills = Skill.all
     @profile = Profile.new
   end

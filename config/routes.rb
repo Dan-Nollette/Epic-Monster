@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :job_listings
   end
   resources :skills
+  resources :blog_entries
 
   root :to => "job_listings#index"
 end

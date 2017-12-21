@@ -11,3 +11,13 @@
   <%end%>
 </ul>
 <%= link_to "Update Profile", "/profiles/#{@profile.id}/edit"%>
+
+<% if @blog_entries.length > 1 %>
+  <h2>Blog Entries:</h2>
+  <% @blog_entries.each do |entry|%>
+    <h3><%= entry.title %></h3>
+    <p><%= entry.body %></p>
+  <% end %>
+<% end %>
+
+<%= render "blog_entries/form"%>
