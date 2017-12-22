@@ -1,5 +1,6 @@
 <h2>Add New Blog Entry</h2>
 <%= form_for @blog_entry do |f| %>
+  <input type="hidden" name="profile_id" value="<%=@profile.id %>">
   <%= f.label :title %>
   <%= f.text_field :title %> <br>
   <%= f.label :body %>
