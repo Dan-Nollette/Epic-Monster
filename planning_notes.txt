@@ -1,0 +1,40 @@
+pages:
+  sign in page
+  sign up page
+
+  jobs overview page
+    paginated list of jobs
+    note: default main page for users who are not logged in as a user associated to a company
+
+  job display page
+    job details
+    job skills
+    link to company profile
+    link back to jobs
+    note: default main page for users who are logged in as a user associated to a company
+
+  workers overview page(s)
+    paginated list of workers
+    company details,
+    company blog posts,
+    list of worker skills
+    profile image
+
+  worker display page
+    worker details
+    worker blog
+    link back to workers overview
+
+  companies overview page(s)
+    paginated list of companies
+
+  company display page
+    company details, company blog posts, list of company current jobs
+
+  events overview page(s)
+    paginated list of workers
+
+  event display page
+    event details
+
+    link to company
